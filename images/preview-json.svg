@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#1A1310"/>
+  <rect x="10" y="10" width="380" height="20" fill="#A6192E"/>
+  <rect x="10" y="35" width="100" height="255" fill="#2A1416"/>
+  <rect x="115" y="35" width="275" height="255" fill="#1A1310"/>
+  <text x="200" y="150" font-family="Inter, sans-serif" font-size="18" fill="#EDE6D6" text-anchor="middle">JSON Preview</text>
+  <text x="200" y="180" font-family="Inter, sans-serif" font-size="14" fill="#A7A8A9" text-anchor="middle">Coming soon</text>
+</svg>
