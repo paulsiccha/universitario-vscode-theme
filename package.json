@@ -19,7 +19,7 @@
     "crema",
     "granate"
   ],
-  "icon": "images/icon.png",
+
   "contributes": {
     "themes": [
       {
