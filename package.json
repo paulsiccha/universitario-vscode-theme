@@ -1,0 +1,47 @@
+{
+  "name": "garra-crema-theme",
+  "displayName": "Garra Crema - Universitario de Deportes",
+  "description": "Tema inspirado en la identidad visual crema y granate del Club Universitario de Deportes",
+  "version": "1.0.0",
+  "publisher": "paulsiccha",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "color-theme",
+    "dark-theme",
+    "universitario",
+    "peru",
+    "crema",
+    "granate"
+  ],
+  "icon": "images/icon.png",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Garra Crema",
+        "uiTheme": "vs-dark",
+        "path": "./themes/garra-crema-color-theme.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "garra-crema-icons",
+        "label": "Garra Crema Icons",
+        "path": "./icons/garra-crema-icon-theme.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulsiccha/universitario-vscode-theme"
+  },
+  "bugs": {
+    "url": "https://github.com/paulsiccha/universitario-vscode-theme/issues"
+  },
+  "homepage": "https://github.com/paulsiccha/universitario-vscode-theme#readme"
+}

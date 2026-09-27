@@ -1,0 +1,31 @@
+{
+  "iconDefinitions": {
+    "folder": {
+      "iconPath": "explorer.svg"
+    },
+    "folder-open": {
+      "iconPath": "explorer.svg"
+    }
+  },
+  "file": "folder",
+  "folderNames": {
+    "src": "folder",
+    "lib": "folder",
+    "components": "folder",
+    "utils": "folder",
+    "assets": "folder",
+    "images": "folder",
+    "styles": "folder",
+    "tests": "folder"
+  },
+  "folderNamesExpanded": {
+    "src": "folder-open",
+    "lib": "folder-open",
+    "components": "folder-open",
+    "utils": "folder-open",
+    "assets": "folder-open",
+    "images": "folder-open",
+    "styles": "folder-open",
+    "tests": "folder-open"
+  }
+}
