@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Garra Crema - Tema de VS Code y Cursor inspirado en la identidad visual del Club Universitario de Deportes.">
+    <meta name="keywords" content="VS Code theme, Cursor theme, Universitario de Deportes, Perú, tema oscuro, syntax highlighting">
+    <meta name="author" content="Paul Siccha">
+    
+    <title>Garra Crema - VS Code Theme</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #1A1310;
+            --bg-secondary: #2A1416;
+            --accent: #A6192E;
+            --accent-hover: #C1273E;
+            --text-primary: #EDE6D6;
+            --text-secondary: #A7A8A9;
+            --gold: #C6AA76;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 100px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .hero-screenshot {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            margin: 3rem 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--text-primary);
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 3rem;
+            letter-spacing: -0.01em;
+        }
+
+        /* Installation Section */
+        .install-steps {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .step:hover {
+            border-color: var(--accent);
+        }
+
+        .step-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-right: 1.5rem;
+            min-width: 2rem;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .keyboard-shortcut {
+            background-color: var(--bg-primary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.875rem;
+            color: var(--gold);
+        }
+
+        .terminal-command {
+            background-color: var(--bg-primary);
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+
+        .note {
+            background-color: var(--bg-secondary);
+            border-left: 3px solid var(--gold);
+            padding: 1rem 1.5rem;
+            margin-top: 2rem;
+            border-radius: 4px;
+        }
+
+        .note p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Color Palette Section */
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .color-swatch {
+            background-color: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .color-swatch:hover {
+            border-color: var(--accent);
+        }
+
+        .color-preview {
+            width: 100%;
+            height: 60px;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .color-name {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .color-hex {
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Preview Section */
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .preview-item {
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .preview-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .preview-label {
+            padding: 1rem;
+            background-color: var(--bg-secondary);
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 0;
+            text-align: center;
+            border-top: 1px solid var(--bg-secondary);
+        }
+
+        .footer-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--accent-hover);
+        }
+
+        .footer-credits {
+            margin-top: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero {
+                padding: 80px 0 60px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .step {
+                padding: 1rem;
+            }
+
+            .palette-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title">Garra Crema</h1>
+            <p class="hero-subtitle">Tema de VS Code y Cursor inspirado en Universitario de Deportes</p>
+            
+            <div class="hero-screenshot-container">
+                <img src="images/hero-screenshot.png" alt="Garra Crema Theme Preview" class="hero-screenshot" 
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding: 4rem 2rem; background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 8px; margin: 3rem 0;\'><p style=\'color: var(--text-secondary);\'>Preview image coming soon</p></div>'">
+            </div>
+            
+            <a href="https://github.com/paulsiccha/universitario-vscode-theme/releases/latest" class="cta-button">
+                Descargar
+            </a>
+        </section>
+
+        <!-- Installation Section -->
+        <section>
+            <h2 class="section-title">Instalación</h2>
+            <div class="install-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Descargar el archivo .vsix</h3>
+                        <p>Descarga la última versión desde <a href="https://github.com/paulsiccha/universitario-vscode-theme/releases/latest" style="color: var(--accent);">Releases</a></p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Abrir VS Code o Cursor</h3>
+                        <p>Asegúrate de tener el editor abierto</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Abrir la paleta de comandos</h3>
+                        <p>Presiona <span class="keyboard-shortcut">Cmd+Shift+P</span> (Mac) o <span class="keyboard-shortcut">Ctrl+Shift+P</span> (Windows/Linux)</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Instalar desde VSIX</h3>
+                        <p>Escribe y selecciona "Extensions: Install from VSIX..."</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Seleccionar el archivo</h3>
+                        <p>Elige el archivo .vsix que descargaste</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>Activar el tema</h3>
+                        <p>Presiona <span class="keyboard-shortcut">Cmd+Shift+P</span> → "Preferences: Color Theme" → "Garra Crema"</p>
+                    </div>
+                </div>
+
+                <div class="terminal-command">
+                    code --install-extension garra-crema-X.Y.Z.vsix
+                </div>
+
+                <div class="note">
+                    <p>Si instalaste también los íconos de producto, cierra y reabre el editor para que se apliquen correctamente.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Color Palette Section -->
+        <section>
+            <h2 class="section-title">Paleta de colores</h2>
+            <div class="palette-grid">
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #FFFEF4;"></div>
+                    <div class="color-name">Crema (base)</div>
+                    <div class="color-hex">#FFFEF4</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #A6192E;"></div>
+                    <div class="color-name">Granate (principal)</div>
+                    <div class="color-hex">#A6192E</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #1A1310;"></div>
+                    <div class="color-name">Fondo editor</div>
+                    <div class="color-hex">#1A1310</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #2A1416;"></div>
+                    <div class="color-name">Sidebar</div>
+                    <div class="color-hex">#2A1416</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #C6AA76;"></div>
+                    <div class="color-name">Dorado (strings)</div>
+                    <div class="color-hex">#C6AA76</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #D46B7A;"></div>
+                    <div class="color-name">Funciones</div>
+                    <div class="color-hex">#D46B7A</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #DA291C;"></div>
+                    <div class="color-name">Errores</div>
+                    <div class="color-hex">#DA291C</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #EDE6D6;"></div>
+                    <div class="color-name">Texto general</div>
+                    <div class="color-hex">#EDE6D6</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preview Section -->
+        <section>
+            <h2 class="section-title">Preview</h2>
+            <div class="preview-grid">
+                <div class="preview-item">
+                    <img src="images/preview-js.png" alt="JavaScript Preview" 
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding: 2rem; background: var(--bg-secondary); text-align: center;\'><p style=\'color: var(--text-secondary);\'>JavaScript preview coming soon</p></div>'">
+                    <div class="preview-label">JavaScript</div>
+                </div>
+                <div class="preview-item">
+                    <img src="images/preview-typescript.png" alt="TypeScript Preview" 
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding: 2rem; background: var(--bg-secondary); text-align: center;\'><p style=\'color: var(--text-secondary);\'>TypeScript preview coming soon</p></div>'">
+                    <div class="preview-label">TypeScript</div>
+                </div>
+                <div class="preview-item">
+                    <img src="images/preview-json.png" alt="JSON Preview" 
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding: 2rem; background: var(--bg-secondary); text-align: center;\'><p style=\'color: var(--text-secondary);\'>JSON preview coming soon</p></div>'">
+                    <div class="preview-label">JSON</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <a href="https://github.com/paulsiccha/universitario-vscode-theme" class="footer-link">GitHub Repository</a>
+            <p class="footer-credits">Created by Paul Siccha</p>
+        </footer>
+    </div>
+</body>
+</html>
