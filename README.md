@@ -40,6 +40,16 @@ Tema visual para VS Code y Cursor inspirado en la identidad visual crema y grana
    - Selecciona "Extensions: Install from VSIX..."
    - Elige el archivo `garra-crema-theme-1.0.0.vsix` generado
 
+3. Activar el tema:
+   - Presiona `Ctrl+Shift+P` (o `Cmd+Shift+P` en Mac)
+   - Selecciona "Preferences: Color Theme"
+   - Elige "Garra Crema"
+
+4. Activar los íconos de archivos:
+   - Presiona `Ctrl+Shift+P` (o `Cmd+Shift+P` en Mac)
+   - Selecciona "Preferences: File Icon Theme"
+   - Elige "Garra Crema (File Icons)"
+
 ### Desarrollo
 
 Para trabajar en el tema localmente:

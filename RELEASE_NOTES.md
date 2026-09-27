@@ -12,7 +12,7 @@
 
 ### Terminal
 ```bash
-code --install-extension garra-crema-theme-1.0.0.vsix
+code --install-extension garra-crema-theme-1.1.0.vsix
 ```
 
 ### Cursor
@@ -45,9 +45,16 @@ Coming soon!
 
 ## 📝 Changelog
 
+### v1.1.0 (2026-09-27)
+- Enhanced file icons with custom folder icons
+- Added activity bar icon with circular "U" design
+- New folder icons with golden diagonal stripe
+- Default file icon for generic files
+- Improved icon theme configuration
+
 ### v1.0.0 (2026-09-26)
 - Initial release
 - Base color theme implementation
-- Custom file icons
+- Basic file icons
 - Landing page
 - VSIX package

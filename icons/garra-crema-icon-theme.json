@@ -1,13 +1,18 @@
 {
   "iconDefinitions": {
     "folder": {
-      "iconPath": "explorer.svg"
+      "iconPath": "folder.svg"
     },
     "folder-open": {
-      "iconPath": "explorer.svg"
+      "iconPath": "folder-open.svg"
+    },
+    "file": {
+      "iconPath": "file.svg"
     }
   },
-  "file": "folder",
+  "file": "file",
+  "folder": "folder",
+  "folderExpanded": "folder-open",
   "folderNames": {
     "src": "folder",
     "lib": "folder",
