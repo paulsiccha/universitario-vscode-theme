@@ -1,4 +1,4 @@
-# Garra Crema v1.0.0
+# Garra Crema v1.2.0
 
 ## 🚀 Installation
 
@@ -12,7 +12,7 @@
 
 ### Terminal
 ```bash
-code --install-extension garra-crema-theme-1.1.0.vsix
+code --install-extension garra-crema-theme-1.2.0.vsix
 ```
 
 ### Cursor
@@ -20,11 +20,12 @@ Same installation process as VS Code.
 
 ## ✨ Features
 
-- **Dark theme** inspired by Universitario de Deportes colors
+- **Two theme variants:** Dark (Garra Crema) and Light (Garra Crema Cream)
 - **Optimized syntax highlighting** for JavaScript, TypeScript, and other languages
 - **Custom file icons** for the explorer
 - **High contrast** for better readability
 - **Compatible** with VS Code and Cursor
+- **Official color palette** from Universitario de Deportes
 
 ## 🎨 Color Palette
 
@@ -44,6 +45,13 @@ Same installation process as VS Code.
 Coming soon!
 
 ## 📝 Changelog
+
+### v1.2.0 (2026-09-28)
+- Added light theme variant (Garra Crema Cream)
+- Updated activity bar icon with improved "U" design
+- Enhanced color palette documentation
+- Updated landing page with theme variants
+- Improved README with both theme options
 
 ### v1.1.0 (2026-09-27)
 - Enhanced file icons with custom folder icons
