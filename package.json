@@ -2,7 +2,7 @@
   "name": "garra-crema-theme",
   "displayName": "Garra Crema - Universitario de Deportes",
   "description": "Tema inspirado en la identidad visual crema y granate del Club Universitario de Deportes",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "publisher": "paulsiccha",
   "engines": {
     "vscode": "^1.75.0"

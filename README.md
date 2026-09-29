@@ -27,6 +27,14 @@ Tema visual para VS Code y Cursor inspirado en la identidad visual crema y grana
 - Alto contraste para mejor legibilidad
 - Paleta de colores oficial del Club Universitario de Deportes
 
+## Capturas de pantalla
+
+### Tema Oscuro (Garra Crema)
+![Tema Oscuro](images/theme-dark.png)
+
+### Tema Claro (Garra Crema Cream)
+![Tema Claro](images/theme-light.png)
+
 ## Instalación
 
 ### Desde VSIX
@@ -39,7 +47,7 @@ Tema visual para VS Code y Cursor inspirado en la identidad visual crema y grana
 2. En VS Code:
    - Presiona `Ctrl+Shift+P` (o `Cmd+Shift+P` en Mac)
    - Selecciona "Extensions: Install from VSIX..."
-   - Elige el archivo `garra-crema-theme-1.2.0.vsix` generado
+   - Elige el archivo `garra-crema-theme-1.2.1.vsix` generado
 
 3. Activar el tema:
    - Presiona `Ctrl+Shift+P` (o `Cmd+Shift+P` en Mac)

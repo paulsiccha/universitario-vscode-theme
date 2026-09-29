@@ -235,22 +235,38 @@
 
         .preview-item {
             border: 1px solid var(--accent);
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .preview-item.featured {
+            border: 2px solid var(--accent);
+        }
+
+        .preview-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(166, 25, 46, 0.3);
         }
 
         .preview-item img {
             width: 100%;
             height: auto;
             display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .preview-item:hover img {
+            transform: scale(1.02);
         }
 
         .preview-label {
-            padding: 1rem;
+            padding: 1.25rem;
             background-color: var(--bg-secondary);
             text-align: center;
-            font-size: 0.875rem;
-            color: var(--text-secondary);
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            font-weight: 500;
         }
 
         /* Footer */
@@ -321,7 +337,7 @@
             <p class="hero-subtitle">Tema de VS Code y Cursor inspirado en Universitario de Deportes - Disponible en variantes oscura y clara</p>
             
             <div class="hero-screenshot-container">
-                <img src="images/hero-screenshot.svg" alt="Garra Crema Theme Preview" class="hero-screenshot">
+                <img src="images/theme-dark.png" alt="Garra Crema Dark Theme Preview" class="hero-screenshot">
             </div>
             
             <a href="https://github.com/paulsiccha/universitario-vscode-theme/releases/latest" class="cta-button">
@@ -459,17 +475,13 @@
         <section>
             <h2 class="section-title">Preview</h2>
             <div class="preview-grid">
-                <div class="preview-item">
-                    <img src="images/preview-js.svg" alt="JavaScript Preview">
-                    <div class="preview-label">JavaScript</div>
+                <div class="preview-item featured">
+                    <img src="images/theme-dark.png" alt="Garra Crema Dark Theme">
+                    <div class="preview-label">Garra Crema (Oscuro)</div>
                 </div>
-                <div class="preview-item">
-                    <img src="images/preview-typescript.svg" alt="TypeScript Preview">
-                    <div class="preview-label">TypeScript</div>
-                </div>
-                <div class="preview-item">
-                    <img src="images/preview-json.svg" alt="JSON Preview">
-                    <div class="preview-label">JSON</div>
+                <div class="preview-item featured">
+                    <img src="images/theme-light.png" alt="Garra Crema Light Theme">
+                    <div class="preview-label">Garra Crema Cream (Claro)</div>
                 </div>
             </div>
         </section>

@@ -1,4 +1,4 @@
-# Garra Crema v1.2.0
+# Garra Crema v1.2.1
 
 ## 🚀 Installation
 
@@ -12,7 +12,7 @@
 
 ### Terminal
 ```bash
-code --install-extension garra-crema-theme-1.2.0.vsix
+code --install-extension garra-crema-theme-1.2.1.vsix
 ```
 
 ### Cursor
@@ -45,6 +45,13 @@ Same installation process as VS Code.
 Coming soon!
 
 ## 📝 Changelog
+
+### v1.2.1 (2026-09-28)
+- Added real screenshots for both theme variants
+- Enhanced landing page with improved aesthetics
+- Added hover effects and transitions to preview images
+- Updated README with screenshot section
+- Improved preview section with featured styling
 
 ### v1.2.0 (2026-09-28)
 - Added light theme variant (Garra Crema Cream)
