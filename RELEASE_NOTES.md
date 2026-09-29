@@ -1,4 +1,4 @@
-# Garra Crema v1.2.1
+# Garra Crema v1.3.0
 
 ## 🚀 Installation
 
@@ -12,7 +12,7 @@
 
 ### Terminal
 ```bash
-code --install-extension garra-crema-theme-1.2.1.vsix
+code --install-extension garra-crema-theme-1.3.0.vsix
 ```
 
 ### Cursor
@@ -45,6 +45,17 @@ Same installation process as VS Code.
 Coming soon!
 
 ## 📝 Changelog
+
+### v1.3.0 (2026-09-28)
+- Complete landing page redesign with premium minimalist aesthetics
+- Added fixed navigation with blur effect
+- Enhanced hero section with gradient typography and floating animation
+- Improved features section with card-based layout
+- Redesigned theme variants showcase with elegant overlays
+- Streamlined installation section with numbered steps
+- Updated color palette presentation with refined cards
+- Added smooth scroll navigation and hover effects
+- Enhanced mobile responsiveness with optimized layouts
 
 ### v1.2.1 (2026-09-28)
 - Added real screenshots for both theme variants

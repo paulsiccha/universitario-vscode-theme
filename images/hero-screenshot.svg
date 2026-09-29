@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
-  <rect width="800" height="600" fill="#1A1310"/>
-  <rect x="20" y="20" width="760" height="40" fill="#A6192E"/>
-  <rect x="20" y="70" width="200" height="510" fill="#2A1416"/>
-  <rect x="230" y="70" width="550" height="510" fill="#1A1310"/>
-  <text x="400" y="320" font-family="Inter, sans-serif" font-size="24" fill="#EDE6D6" text-anchor="middle">Garra Crema Theme Preview</text>
-  <text x="400" y="360" font-family="Inter, sans-serif" font-size="16" fill="#A7A8A9" text-anchor="middle">Coming soon</text>
-</svg>

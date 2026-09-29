@@ -11,7 +11,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -21,195 +21,402 @@
         }
 
         :root {
-            --bg-primary: #1A1310;
-            --bg-secondary: #2A1416;
+            --bg-primary: #0a0807;
+            --bg-secondary: #1a1310;
+            --bg-tertiary: #2a1416;
             --accent: #A6192E;
-            --accent-hover: #C1273E;
-            --text-primary: #EDE6D6;
-            --text-secondary: #A7A8A9;
+            --accent-light: #C1273E;
+            --text-primary: #fafafa;
+            --text-secondary: #a0a0a0;
+            --text-muted: #6b6b6b;
             --gold: #C6AA76;
+            --border-subtle: rgba(166, 25, 46, 0.1);
+            --gradient-accent: linear-gradient(135deg, #A6192E 0%, #7C2629 100%);
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg-primary);
             color: var(--text-primary);
-            line-height: 1.6;
+            line-height: 1.5;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 8, 7, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
         /* Hero Section */
         .hero {
-            padding: 120px 0 100px;
+            padding: 180px 0 120px;
             text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(166, 25, 46, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--gradient-accent);
+            color: white;
+            padding: 0.375rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
         }
 
         .hero-title {
-            font-size: 4rem;
+            font-size: 5rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-subtitle {
             font-size: 1.25rem;
             color: var(--text-secondary);
             margin-bottom: 3rem;
-            font-weight: 400;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-screenshot {
-            max-width: 100%;
+            max-width: 90%;
             height: auto;
-            border: 1px solid var(--accent);
-            border-radius: 8px;
-            margin: 3rem 0;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            margin: 4rem auto;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(166, 25, 46, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 3rem;
         }
 
         .cta-button {
             display: inline-block;
-            background-color: var(--accent);
-            color: var(--text-primary);
+            background: var(--gradient-accent);
+            color: white;
             padding: 1rem 2.5rem;
-            border-radius: 6px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.125rem;
-            transition: background-color 0.2s ease;
+            font-size: 1rem;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 12px rgba(166, 25, 46, 0.3);
         }
 
         .cta-button:hover {
-            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(166, 25, 46, 0.4);
+        }
+
+        .cta-button-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-subtle);
+            box-shadow: none;
+        }
+
+        .cta-button-secondary:hover {
+            background: var(--bg-secondary);
+            border-color: var(--accent);
         }
 
         /* Sections */
         section {
-            padding: 100px 0;
+            padding: 120px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 3rem;
-            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
 
-        /* Installation Section */
-        .install-steps {
-            max-width: 700px;
+        .section-description {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            max-width: 600px;
             margin: 0 auto;
+            font-weight: 300;
         }
 
-        .step {
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Theme Variants */
+        .variants-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .variant-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+            transition: all 0.4s ease;
+        }
+
+        .variant-card:hover {
+            border-color: var(--accent);
+            transform: scale(1.02);
+        }
+
+        .variant-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .variant-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(10, 8, 7, 0.9));
+            padding: 2rem;
+        }
+
+        .variant-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .variant-description {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Installation */
+        .install-container {
+            max-width: 800px;
+            margin: 4rem auto 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 3rem;
+        }
+
+        .install-steps {
+            counter-reset: step;
+        }
+
+        .install-step {
             display: flex;
             align-items: flex-start;
             margin-bottom: 2rem;
-            padding: 1.5rem;
-            background-color: var(--bg-secondary);
-            border-radius: 8px;
-            border: 1px solid transparent;
-            transition: border-color 0.2s ease;
+            position: relative;
         }
 
-        .step:hover {
-            border-color: var(--accent);
-        }
-
-        .step-number {
-            font-size: 1.5rem;
+        .install-step::before {
+            counter-increment: step;
+            content: counter(step);
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: 700;
-            color: var(--accent);
+            font-size: 0.875rem;
             margin-right: 1.5rem;
-            min-width: 2rem;
+            flex-shrink: 0;
         }
 
-        .step-content {
-            flex: 1;
-        }
-
-        .step-content h3 {
+        .install-content h3 {
             font-size: 1.125rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
             color: var(--text-primary);
+            margin-bottom: 0.5rem;
         }
 
-        .step-content p {
+        .install-content p {
             color: var(--text-secondary);
             font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         .keyboard-shortcut {
-            background-color: var(--bg-primary);
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-family: 'Monaco', 'Menlo', monospace;
-            font-size: 0.875rem;
-            color: var(--gold);
-        }
-
-        .terminal-command {
-            background-color: var(--bg-primary);
-            padding: 1rem;
+            background: var(--bg-tertiary);
+            padding: 0.25rem 0.75rem;
             border-radius: 6px;
             font-family: 'Monaco', 'Menlo', monospace;
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            margin-top: 1rem;
-            overflow-x: auto;
+            font-size: 0.8rem;
+            color: var(--gold);
+            border: 1px solid var(--border-subtle);
         }
 
-        .note {
-            background-color: var(--bg-secondary);
-            border-left: 3px solid var(--gold);
-            padding: 1rem 1.5rem;
-            margin-top: 2rem;
-            border-radius: 4px;
-        }
-
-        .note p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Color Palette Section */
+        /* Color Palette */
         .palette-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
-            margin-top: 2rem;
+            margin-top: 4rem;
         }
 
-        .color-swatch {
-            background-color: var(--bg-secondary);
+        .color-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
             padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid transparent;
-            transition: border-color 0.2s ease;
+            transition: all 0.3s ease;
         }
 
-        .color-swatch:hover {
+        .color-card:hover {
             border-color: var(--accent);
+            transform: translateY(-2px);
         }
 
         .color-preview {
             width: 100%;
-            height: 60px;
-            border-radius: 4px;
+            height: 80px;
+            border-radius: 8px;
             margin-bottom: 1rem;
+            border: 1px solid var(--border-subtle);
         }
 
         .color-name {
@@ -222,105 +429,94 @@
         .color-hex {
             font-family: 'Monaco', 'Menlo', monospace;
             font-size: 0.75rem;
-            color: var(--text-secondary);
-        }
-
-        /* Preview Section */
-        .preview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .preview-item {
-            border: 1px solid var(--accent);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .preview-item.featured {
-            border: 2px solid var(--accent);
-        }
-
-        .preview-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(166, 25, 46, 0.3);
-        }
-
-        .preview-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .preview-item:hover img {
-            transform: scale(1.02);
-        }
-
-        .preview-label {
-            padding: 1.25rem;
-            background-color: var(--bg-secondary);
-            text-align: center;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-            font-weight: 500;
+            color: var(--text-muted);
         }
 
         /* Footer */
         footer {
             padding: 80px 0;
             text-align: center;
-            border-top: 1px solid var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
         }
 
         .footer-link {
-            color: var(--accent);
+            color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s ease;
         }
 
         .footer-link:hover {
-            color: var(--accent-hover);
+            color: var(--accent);
         }
 
-        .footer-credits {
-            margin-top: 1rem;
-            color: var(--text-secondary);
+        .footer-copyright {
+            color: var(--text-muted);
             font-size: 0.875rem;
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .variants-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .palette-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
+                font-size: 3rem;
             }
 
             .hero {
-                padding: 80px 0 60px;
+                padding: 120px 0 80px;
+            }
+
+            .hero-screenshot {
+                margin: 3rem auto;
             }
 
             section {
-                padding: 60px 0;
+                padding: 80px 0;
             }
 
             .section-title {
                 font-size: 2rem;
             }
 
-            .step {
-                padding: 1rem;
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .variants-container {
+                grid-template-columns: 1fr;
             }
 
             .palette-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .install-container {
+                padding: 2rem;
+            }
+
+            .nav-links {
+                display: none;
             }
 
             .container {
@@ -330,166 +526,180 @@
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-content">
+            <a href="#" class="nav-logo">Garra Crema</a>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Características</a>
+                <a href="#variants" class="nav-link">Variantes</a>
+                <a href="#install" class="nav-link">Instalación</a>
+                <a href="https://github.com/paulsiccha/universitario-vscode-theme" class="nav-link">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <!-- Hero Section -->
         <section class="hero">
+            <div class="hero-badge">VS Code Theme</div>
             <h1 class="hero-title">Garra Crema</h1>
-            <p class="hero-subtitle">Tema de VS Code y Cursor inspirado en Universitario de Deportes - Disponible en variantes oscura y clara</p>
+            <p class="hero-subtitle">Tema premium para VS Code y Cursor inspirado en la identidad visual del Club Universitario de Deportes</p>
             
-            <div class="hero-screenshot-container">
-                <img src="images/theme-dark.png" alt="Garra Crema Dark Theme Preview" class="hero-screenshot">
+            <img src="images/theme-dark.png" alt="Garra Crema Theme Preview" class="hero-screenshot">
+            
+            <div class="cta-container">
+                <a href="https://github.com/paulsiccha/universitario-vscode-theme/releases/latest" class="cta-button">
+                    Descargar
+                </a>
+                <a href="#install" class="cta-button cta-button-secondary">
+                    Cómo instalar
+                </a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features">
+            <div class="section-header">
+                <div class="section-label">Características</div>
+                <h2 class="section-title">Diseñado para productividad</h2>
+                <p class="section-description">Cada detalle está pensado para mejorar tu experiencia de desarrollo</p>
             </div>
             
-            <a href="https://github.com/paulsiccha/universitario-vscode-theme/releases/latest" class="cta-button">
-                Descargar
-            </a>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">Dos variantes</h3>
+                    <p class="feature-description">Oscuro para trabajo nocturno, claro para día claro. Ambos con la misma identidad visual.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Syntax highlighting</h3>
+                    <p class="feature-description">Colores optimizados para JavaScript, TypeScript y todos los lenguajes principales.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Iconos personalizados</h3>
+                    <p class="feature-description">Set de iconos único para el explorador con diseño inspirado en la identidad del club.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Theme Variants Section -->
+        <section id="variants">
+            <div class="section-header">
+                <div class="section-label">Variantes</div>
+                <h2 class="section-title">Elige tu estilo</h2>
+                <p class="section-description">Dos temas, misma identidad visual</p>
+            </div>
+            
+            <div class="variants-container">
+                <div class="variant-card">
+                    <img src="images/theme-dark.png" alt="Garra Crema Dark Theme" class="variant-image">
+                    <div class="variant-info">
+                        <h3 class="variant-name">Garra Crema</h3>
+                        <p class="variant-description">Tema oscuro para concentración máxima</p>
+                    </div>
+                </div>
+                <div class="variant-card">
+                    <img src="images/theme-light.png" alt="Garra Crema Light Theme" class="variant-image">
+                    <div class="variant-info">
+                        <h3 class="variant-name">Garra Crema Cream</h3>
+                        <p class="variant-description">Tema claro para espacios iluminados</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Installation Section -->
-        <section>
-            <h2 class="section-title">Instalación</h2>
-            <div class="install-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Descargar el archivo .vsix</h3>
-                        <p>Descarga la última versión desde <a href="https://github.com/paulsiccha/universitario-vscode-theme/releases/latest" style="color: var(--accent);">Releases</a></p>
+        <section id="install">
+            <div class="section-header">
+                <div class="section-label">Instalación</div>
+                <h2 class="section-title">Listo en segundos</h2>
+                <p class="section-description">Instalación directa, sin configuraciones complejas</p>
+            </div>
+            
+            <div class="install-container">
+                <div class="install-steps">
+                    <div class="install-step">
+                        <div class="install-content">
+                            <h3>Descargar el archivo .vsix</h3>
+                            <p>Descarga la última versión desde <a href="https://github.com/paulsiccha/universitario-vscode-theme/releases/latest" style="color: var(--accent);">GitHub Releases</a></p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Abrir VS Code o Cursor</h3>
-                        <p>Asegúrate de tener el editor abierto</p>
+                    <div class="install-step">
+                        <div class="install-content">
+                            <h3>Abrir VS Code o Cursor</h3>
+                            <p>Asegúrate de tener el editor abierto</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Abrir la paleta de comandos</h3>
-                        <p>Presiona <span class="keyboard-shortcut">Cmd+Shift+P</span> (Mac) o <span class="keyboard-shortcut">Ctrl+Shift+P</span> (Windows/Linux)</p>
+                    <div class="install-step">
+                        <div class="install-content">
+                            <h3>Abrir la paleta de comandos</h3>
+                            <p>Presiona <span class="keyboard-shortcut">Cmd+Shift+P</span> (Mac) o <span class="keyboard-shortcut">Ctrl+Shift+P</span> (Windows/Linux)</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Instalar desde VSIX</h3>
-                        <p>Escribe y selecciona "Extensions: Install from VSIX..."</p>
+                    <div class="install-step">
+                        <div class="install-content">
+                            <h3>Instalar desde VSIX</h3>
+                            <p>Escribe y selecciona "Extensions: Install from VSIX..."</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Seleccionar el archivo</h3>
-                        <p>Elige el archivo .vsix que descargaste</p>
+                    <div class="install-step">
+                        <div class="install-content">
+                            <h3>Seleccionar el archivo</h3>
+                            <p>Elige el archivo .vsix que descargaste</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">6</div>
-                    <div class="step-content">
-                        <h3>Activar el tema</h3>
-                        <p>Presiona <span class="keyboard-shortcut">Cmd+Shift+P</span> → "Preferences: Color Theme" → "Garra Crema" (oscuro) o "Garra Crema Cream" (claro)</p>
+                    <div class="install-step">
+                        <div class="install-content">
+                            <h3>Activar el tema</h3>
+                            <p>Presiona <span class="keyboard-shortcut">Cmd+Shift+P</span> → "Preferences: Color Theme" → Elige tu variante</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="terminal-command">
-                    code --install-extension garra-crema-X.Y.Z.vsix
-                </div>
-
-                <div class="note">
-                    <p>Si instalaste también los íconos de producto, cierra y reabre el editor para que se apliquen correctamente.</p>
                 </div>
             </div>
         </section>
 
         <!-- Color Palette Section -->
         <section>
-            <h2 class="section-title">Paleta de colores</h2>
+            <div class="section-header">
+                <div class="section-label">Paleta</div>
+                <h2 class="section-title">Colores oficiales</h2>
+                <p class="section-description">Basados en la identidad visual del Club Universitario de Deportes</p>
+            </div>
+            
             <div class="palette-grid">
-                <div class="color-swatch">
+                <div class="color-card">
                     <div class="color-preview" style="background-color: #FFFEF4;"></div>
-                    <div class="color-name">Crema (base)</div>
+                    <div class="color-name">Crema</div>
                     <div class="color-hex">#FFFEF4</div>
                 </div>
-                <div class="color-swatch">
+                <div class="color-card">
                     <div class="color-preview" style="background-color: #A6192E;"></div>
-                    <div class="color-name">Granate (principal)</div>
+                    <div class="color-name">Granate</div>
                     <div class="color-hex">#A6192E</div>
                 </div>
-                <div class="color-swatch">
+                <div class="color-card">
+                    <div class="color-preview" style="background-color: #C6AA76;"></div>
+                    <div class="color-name">Dorado</div>
+                    <div class="color-hex">#C6AA76</div>
+                </div>
+                <div class="color-card">
                     <div class="color-preview" style="background-color: #1A1310;"></div>
                     <div class="color-name">Fondo oscuro</div>
                     <div class="color-hex">#1A1310</div>
-                </div>
-                <div class="color-swatch">
-                    <div class="color-preview" style="background-color: #2A1416;"></div>
-                    <div class="color-name">Sidebar oscuro</div>
-                    <div class="color-hex">#2A1416</div>
-                </div>
-                <div class="color-swatch">
-                    <div class="color-preview" style="background-color: #C6AA76;"></div>
-                    <div class="color-name">Dorado (strings)</div>
-                    <div class="color-hex">#C6AA76</div>
-                </div>
-                <div class="color-swatch">
-                    <div class="color-preview" style="background-color: #D46B7A;"></div>
-                    <div class="color-name">Funciones</div>
-                    <div class="color-hex">#D46B7A</div>
-                </div>
-                <div class="color-swatch">
-                    <div class="color-preview" style="background-color: #DA291C;"></div>
-                    <div class="color-name">Errores</div>
-                    <div class="color-hex">#DA291C</div>
-                </div>
-                <div class="color-swatch">
-                    <div class="color-preview" style="background-color: #EDE6D6;"></div>
-                    <div class="color-name">Texto general</div>
-                    <div class="color-hex">#EDE6D6</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Theme Variants Section -->
-        <section>
-            <h2 class="section-title">Variantes del tema</h2>
-            <div class="palette-grid">
-                <div class="color-swatch">
-                    <div class="color-preview" style="background-color: #1A1310;"></div>
-                    <div class="color-name">Garra Crema (Oscuro)</div>
-                    <div class="color-hex">Dark Theme</div>
-                </div>
-                <div class="color-swatch">
-                    <div class="color-preview" style="background-color: #FFFEF4;"></div>
-                    <div class="color-name">Garra Crema Cream (Claro)</div>
-                    <div class="color-hex">Light Theme</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Preview Section -->
-        <section>
-            <h2 class="section-title">Preview</h2>
-            <div class="preview-grid">
-                <div class="preview-item featured">
-                    <img src="images/theme-dark.png" alt="Garra Crema Dark Theme">
-                    <div class="preview-label">Garra Crema (Oscuro)</div>
-                </div>
-                <div class="preview-item featured">
-                    <img src="images/theme-light.png" alt="Garra Crema Light Theme">
-                    <div class="preview-label">Garra Crema Cream (Claro)</div>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
         <footer>
-            <a href="https://github.com/paulsiccha/universitario-vscode-theme" class="footer-link">GitHub Repository</a>
-            <p class="footer-credits">Created by Paul Siccha</p>
+            <div class="footer-content">
+                <a href="https://github.com/paulsiccha/universitario-vscode-theme" class="footer-link">GitHub</a>
+                <a href="https://github.com/paulsiccha" class="footer-link">Created by Paul Siccha</a>
+                <p class="footer-copyright">© 2026 Garra Crema Theme</p>
+            </div>
         </footer>
     </div>
 </body>
